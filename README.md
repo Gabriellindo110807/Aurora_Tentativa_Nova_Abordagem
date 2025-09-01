@@ -19,3 +19,7 @@ Funcionalidades implementadas:
 9. **Histórico de compras do usuário** para revisão e consulta posterior.  
 10. **Assistente virtual simples** para auxiliar o usuário durante a compra (pode ser via mensagens automáticas ou dicas na tela).  
 11. **Carrinho com suporte a múltiplos idiomas** (ex.: português, inglês, espanhol).
+
+
+
+Link da hospedagem do site(Dev tools): https://93cc5032-9ef8-47bf-ac9d-3a0d128c22bf-00-fnyo6slzz837.kirk.replit.dev/ 
