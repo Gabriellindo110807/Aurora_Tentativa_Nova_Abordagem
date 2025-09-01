@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Aurora Dark Theme - Primary Colors */
+  --background: hsl(220, 45%, 5%);
+  --foreground: hsl(210, 20%, 95%);
+  --card: hsl(220, 40%, 8%);
+  --card-foreground: hsl(210, 20%, 95%);
+  --popover: hsl(220, 40%, 8%);
+  --popover-foreground: hsl(210, 20%, 95%);
+  
+  /* Aurora Brand Colors */
+  --primary: hsl(45, 100%, 52%);
+  --primary-foreground: hsl(220, 45%, 5%);
+  --secondary: hsl(230, 85%, 30%);
+  --secondary-foreground: hsl(210, 20%, 95%);
+  
+  /* UI Colors */
+  --muted: hsl(220, 40%, 12%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(45, 90%, 45%);
+  --accent-foreground: hsl(220, 45%, 5%);
+  --destructive: hsl(0, 85%, 60%);
+  --destructive-foreground: hsl(210, 20%, 95%);
+  --border: hsl(220, 40%, 15%);
+  --input: hsl(220, 40%, 15%);
+  --ring: hsl(45, 100%, 52%);
+  
+  /* Status Colors */
+  --success: hsl(142, 71%, 45%);
+  --warning: hsl(38, 92%, 50%);
+  
+  /* Chart Colors */
+  --chart-1: hsl(45, 100%, 52%);
+  --chart-2: hsl(142, 71%, 45%);
+  --chart-3: hsl(230, 85%, 30%);
+  --chart-4: hsl(0, 85%, 60%);
+  --chart-5: hsl(38, 92%, 50%);
+  
+  /* Sidebar Colors */
+  --sidebar: hsl(220, 40%, 8%);
+  --sidebar-foreground: hsl(210, 20%, 95%);
+  --sidebar-primary: hsl(45, 100%, 52%);
+  --sidebar-primary-foreground: hsl(220, 45%, 5%);
+  --sidebar-accent: hsl(220, 40%, 12%);
+  --sidebar-accent-foreground: hsl(210, 20%, 95%);
+  --sidebar-border: hsl(220, 40%, 15%);
+  --sidebar-ring: hsl(45, 100%, 52%);
+  
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  /* Spacing */
+  --radius: 0.75rem;
+  --spacing: 0.25rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.light {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(220, 45%, 5%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(220, 45%, 5%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(220, 45%, 5%);
+  --primary: hsl(230, 85%, 30%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(45, 100%, 52%);
+  --secondary-foreground: hsl(220, 45%, 5%);
+  --muted: hsl(220, 5%, 96%);
+  --muted-foreground: hsl(220, 5%, 46%);
+  --accent: hsl(230, 85%, 30%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --border: hsl(220, 13%, 91%);
+  --input: hsl(220, 13%, 91%);
+  --ring: hsl(230, 85%, 30%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .aurora-gradient {
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--primary)) 100%);
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: hsla(220, 40%, 8%, 0.8);
+    border: 1px solid hsla(220, 40%, 15%, 0.5);
+  }
+
+  .aurora-logo {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(var(--primary-foreground));
+  }
+
+  .totem-button {
+    min-height: 60px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .totem-button:hover {
+    transform: scale(1.02);
+  }
+
+  .totem-button:active {
+    transform: scale(0.98);
+  }
+
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px hsla(220, 40%, 3%, 0.4);
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-in;
+  }
+
+  .typing-animation {
+    overflow: hidden;
+    border-right: 3px solid hsl(var(--primary));
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: hsl(var(--primary)) }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}

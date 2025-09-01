@@ -1,0 +1,65 @@
+Quero que você desenvolva um sistema web completo chamado **Carrinho Inteligente** para a segunda etapa do projeto.  
+Esse sistema deve seguir os seguintes requisitos obrigatórios e também conter melhorias de usabilidade e design.
+
+### 🔹 Requisitos Técnicos
+- Linguagem: PHP (orientado a objetos).
+- Arquitetura: **MVC (Model, View, Controller)**.
+- Persistência: **Padrão Repository** para acesso ao banco de dados.
+- Banco: MySQL.
+- Organização do código em pastas separadas: /model, /view, /controller, /repository.
+- O projeto deve estar pronto para ser publicado em um repositório público no **GitHub**.
+
+### 🔹 Funcionalidades obrigatórias (11 no total)
+1. **Cadastro de usuários** com dados pessoais e de pagamento.  
+2. **Login de usuários** com persistência de sessão.  
+3. **Cadastrar listas de compras prévias**.  
+4. **Listagem de produtos** e **pesquisa de produtos** para localizar rapidamente no mercado.  
+5. **Adicionar produtos ao carrinho** e **remover/cancelar produtos** de forma intuitiva.  
+6. **Calcular e exibir valor total da compra em tempo real**, incluindo descontos.  
+7. **Pagamento via cartão de crédito, débito, PIX ou carteiras digitais**.  
+8. **Aviso em caso de erro de leitura nos produtos** (simulação de QR Code/barcode).  
+9. **Histórico de compras do usuário** para revisão e consulta posterior.  
+10. **Assistente virtual simples** para auxiliar o usuário durante a compra (pode ser via mensagens automáticas ou dicas na tela).  
+11. **Carrinho com suporte a múltiplos idiomas** (ex.: português, inglês, espanhol).  
+
+### 🔹 Páginas adicionais (melhorias obrigatórias para deixar o sistema mais completo)
+- **Página inicial (antes do login):**  
+  Com apresentação do sistema, animação de entrada (exemplo: texto digitado, transição suave) e links para Login, Cadastro, Sobre e Contato.  
+
+- **Página Sobre:**  
+  Explicando o objetivo do sistema, equipe de desenvolvimento e informações do projeto.  
+
+- **Página Contato:**  
+  Formulário simples para enviar mensagem de contato (nome, email, mensagem).  
+
+- **Animações extras:**  
+  - Animação inicial ao abrir a página (ex: fade-in, texto digitado ou transição de tela).  
+  - Transições leves entre páginas para melhor experiência do usuário.  
+
+### 🔹 Estilo Visual
+- Tema escuro como padrão, com opção de **modo claro/escuro** persistente entre páginas.  
+- Paleta: fundo escuro, botões em laranja vibrante, detalhes em azul.  
+- Layout responsivo (funcionar bem em desktop e mobile).  
+- Interfaces modernas, inspiradas em sistemas de autoatendimento.  
+
+### 🔹 README.md (obrigatório)
+O repositório no GitHub deve conter um arquivo **README.md** com:  
+- Nome do projeto: Carrinho Inteligente.  
+- Nomes e matrículas dos integrantes.  
+- Lista das 11 funcionalidades implementadas.  
+- Lista das páginas extras implementadas.  
+- Instruções claras para rodar o sistema (passo a passo da instalação, dependências, script SQL para criar o banco).  
+
+### 🔹 Avaliação (segundo o professor)
+- Orientação a objetos bem aplicada: **3 pontos**.  
+- Separação correta em MVC: **3 pontos**.  
+- Uso do padrão Repository: **2 pontos**.  
+- Funcionalidades obrigatórias funcionando (11 no total): **5 pontos**.  
+- Organização do repositório + README.md completo: **2 pontos**.  
+**Total: 15 pontos.**
+
+### 🔹 Entregáveis
+- Código pronto e funcional em um repositório GitHub (não em .zip).  
+- Script SQL para criação do banco.  
+- README.md bem documentado.  
+- Projeto rodando para demonstração em vídeo e em sala de aula.
