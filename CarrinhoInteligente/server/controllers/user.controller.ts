@@ -7,7 +7,7 @@ export class UserController {
     try {
       const { email, password } = loginSchema.parse(req.body);
       const user = await userService.authenticate(email, password);
-      res.json({ user: { id: user.id, username: user.username, email: user.email, preferredLanguage: user.preferredLanguage } });
+      res.json({ user: user.toPublic() });
     } catch (err: any) {
       res.status(err.status || 400).json({ message: err.message || "Dados inválidos" });
     }
@@ -18,7 +18,7 @@ export class UserController {
       const userData = registerSchema.parse(req.body);
       const { confirmPassword, ...toCreate } = userData as any;
       const user = await userService.register(toCreate);
-      res.status(201).json({ user: { id: user.id, username: user.username, email: user.email, preferredLanguage: user.preferredLanguage } });
+      res.status(201).json({ user: user.toPublic() });
     } catch (err: any) {
       res.status(err.status || 400).json({ message: err.message || "Dados inválidos" });
     }

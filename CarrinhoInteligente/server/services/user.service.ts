@@ -1,8 +1,9 @@
 import { userRepository } from "../repositories/user.repository";
-import type { InsertUser, User } from "@shared/schema";
+import type { InsertUser } from "@shared/schema";
+import UserModel from "../models/user.model";
 
 export class UserService {
-  async register(userData: InsertUser): Promise<User> {
+  async register(userData: InsertUser): Promise<UserModel> {
     // Basic checks currently present in routes can be moved here.
     const byEmail = await userRepository.getByEmail(userData.email);
     if (byEmail) {
@@ -18,14 +19,15 @@ export class UserService {
       throw e;
     }
 
-    // NOTE: password hashing should be added here in a later task.
-    const user = await userRepository.create(userData);
-    return user;
+    // Create model and set password (placeholder for hashing)
+    const created = await userRepository.create(userData);
+    // userRepository.create returns a UserModel already
+    return created;
   }
 
-  async authenticate(email: string, password: string): Promise<User> {
+  async authenticate(email: string, password: string): Promise<UserModel> {
     const user = await userRepository.getByEmail(email);
-    if (!user || user.password !== password) {
+    if (!user || !user.checkPassword(password)) {
       const e: any = new Error("Credenciais inválidas");
       e.status = 401;
       throw e;
